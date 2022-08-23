@@ -14,6 +14,8 @@ class Snake:
     def __init__(self, game):
         self.game = game
         self.size = game.TILE_SIZE
+        #Color of the Snake
+        self.color = "green"
         #Initializing the snake rectangle of width and height of tile size
         # -2 for the grid
         self.rect = pg.rect.Rect([0, 0, game.TILE_SIZE - 2, game.TILE_SIZE - 2])
@@ -144,7 +146,7 @@ class Snake:
 
     #Method to Draw each segments of the snake in green color
     def draw(self):
-        [pg.draw.rect(self.game.screen, 'green', segment) for segment in self.segments]
+        [pg.draw.rect(self.game.screen, self.color, segment) for segment in self.segments]
 
 #Worm Class
 class Worm:
@@ -152,6 +154,7 @@ class Worm:
     def __init__(self, game):
         self.game = game
         self.size = game.TILE_SIZE
+        self.color = "red"
         #Initializing the rectangle of width and height of tile size
         self.rect = pg.rect.Rect([0, 0, game.TILE_SIZE - 2, game.TILE_SIZE - 2])
         #Getting a random center position coordinate of the worm
@@ -160,7 +163,7 @@ class Worm:
     #Method to draw the worm
     def draw(self):
         #Drawing the worm in red color to the screen
-        pg.draw.rect(self.game.screen, 'red', self.rect)
+        pg.draw.rect(self.game.screen, self.color, self.rect)
 
 #Score Class
 class Score:
