@@ -290,6 +290,7 @@ class Game:
             #Drawing the snake object
             self.snake.draw()
 
+    #Method to check game over
     def check_game_over(self):
         if self.game_over:
             self.score.reset()
